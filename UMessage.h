@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, kUMessageError) {
 
 
 @class CLLocation;
-typedef void (^UMPlaunchFinishBlock)();
+
 /** UMessage：开发者使用主类（API）
  */
 @interface UMessage : NSObject
@@ -78,7 +78,7 @@ typedef void (^UMPlaunchFinishBlock)();
  @param launchOptions 启动参数
  @param value     开启友盟内部协议使用https的开关,默认是关闭
  */
-+ (void)startWithAppkey:(NSString * __nonnull)appKey launchOptions:(NSDictionary * __nullable)launchOptions httpsEnable:(BOOL)value;
++ (void)startWithAppkey:(NSString * __nonnull)appKey launchOptions:(NSDictionary * __nullable)launchOptions httpsenable:(BOOL)value;
 
 /** 注册RemoteNotification的类型
  @brief 分别针对iOS8以前版本及iOS8及以后开启推送消息推送。
@@ -225,19 +225,4 @@ typedef void (^UMPlaunchFinishBlock)();
  */
 + (void)removeAlias:(NSString * __nonnull)name type:(NSString * __nonnull)type response:(nullable void (^)(id __nonnull responseObject, NSError *__nonnull error))handle;
 
-/** 添加一个启动页的开屏通知
- @param window 当前window
- @param window 结束后要显示的ViewController
- */
-+(void)addLaunchMessageWithWindow:(UIWindow *__nonnull)window finishViewController:(UIViewController *__nonnull)ViewController;
-
-/** 添加一个插屏通知
- @param label 当前位置的标识
- */
-+(void)addCardMessageWithLabel:(NSString* __nonnull)label;
-
-/** 添加一个插屏通知
- @param debugmode 是否开启开发模式，开发模式为YES。生产模式为NO，不调用默认为生产模式
- */
-+(void)openDebugMode:(BOOL)debugmode;
 @end
