@@ -15,7 +15,7 @@ s.source_files = '*.h'
 s.public_header_files = '*.h'
 s.preserve_paths = "libUMessage_Sdk_1.5.0.a"
 s.vendored_libraries = "libUMessage_Sdk_1.5.0.a"
-#s.frameworks = 'SystemConfiguration', 'CoreTelephony', 'CFNetwork'
+s.frameworks = 'SystemConfiguration', 'UserNotifications', 'CFNetwork'
 #s.libraries = 'z', 'sqlite3.0', 'c++'
 end
 
